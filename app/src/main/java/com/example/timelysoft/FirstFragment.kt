@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.timelysoft.databinding.FragmentFirstBinding
 
 /**
@@ -14,7 +15,7 @@ import com.example.timelysoft.databinding.FragmentFirstBinding
 class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
-
+    private lateinit var adapter: WordAdapter
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -24,13 +25,26 @@ class FirstFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
+    private fun initRecyclerView() {
+        _binding?.recyclerView2
+        adapter = WordAdapter()
+        with(_binding?.recyclerView2) {
+            this?.let {
+                layoutManager = LinearLayoutManager(requireContext())
+                setHasFixedSize(true)
+                this.adapter = adapter
+            }
+        }
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initRecyclerView()
         binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+
         }
     }
 
