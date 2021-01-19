@@ -4,26 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstFragment">
+    tools:context=".androidui.FirstFragment">
 
 
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
         android:id="@+id/textInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="36dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:textColorHint="@color/black"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:textColor="@color/black"-->
+<!--            android:backgroundTint="@color/black"-->
+<!--            android:outlineAmbientShadowColor="@color/black"-->
+<!--            tools:text="faefdaadfadf"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" />-->
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </EditText>
 
     <Button
         android:id="@+id/button_first"
